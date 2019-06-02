@@ -6,6 +6,7 @@
 		<style type="text/css">
 			/* 重置css开始 */
 			html,body{height: 100%;overflow: hidden;}
+			#warp{height: 100%;}
 			html,body,h1,h2,h3,h4,h5,h6,p,ul,li{margin: 0px;padding: 0px;font: 14px "微软雅黑";}
 			a{text-decoration: none;display: block;}
 			li{list-style: none;}
@@ -34,13 +35,13 @@
 			/* content开始 */
 			#content{background-color: gray; position: relative; overflow: hidden; width: 100%;}
 			#content > .list{position: absolute; left: 0; top: 0; width: 100%;transition: 1s top;}
-			#content > ul > li{position: relative; background-position: 50% 50% !important;}
+			#content > ul > li{position: relative; background-position: 50% 50% !important;overflow: hidden;}
 			#content > ul > li > div{width: 1100px; height: 520px;position: absolute;left: 0;
 									right: 0;top: 0;bottom: 0;margin: auto;} 
 				
 				/* 第一屏开始 */					
 				#content > ul > .home{background: url(img/bg1.jpg) no-repeat;}
-				#content > ul > .home .home1{width: 100%;height: 100%;perspective: 1000px;transform-style: preserve-3d;} /* 搭建3d舞台 */
+				#content > ul > .home .home1{width: 100%;height: 100%;perspective: 1000px;transform-style: preserve-3d; transition: 1s transform;} /* 搭建3d舞台 */
 				#content > ul > .home .home1 > li{position: absolute;left: 0;right: 0;top: 0;bottom: 0; visibility: hidden;} /* visibility具有过渡效果 */
 				#content > ul > .home .home1 > li:nth-child(1){background:#dc6c5f;}
 				#content > ul > .home .home1 > li:nth-child(2){background:#95dc84;}
@@ -79,7 +80,7 @@
 					100%{transform: translateZ(-200px);}
 				}
 				
-				#content > ul > .home .home2{width: 100%;text-align: center;position: absolute;bottom: 0;}
+				#content > ul > .home .home2{width: 100%;text-align: center;position: absolute;bottom: 0; transition: 1s transform;}
 				#content > ul > .home .home2 li{width: 20px; height: 20px;border-radius: 50%;background:rgba(255,255,255,0.5);display: inline-block;
 												box-shadow: 0 0 4px rgba(25,25,25,0.8);cursor: pointer;}
 				#content > ul > .home .home2 li.active{background: white;cursor: default;}
@@ -87,9 +88,9 @@
 				
 				/* 第二屏开始 */
 				#content > ul > .course{background: url(img/bg2.jpg) no-repeat;}
-				#content > ul > .course .course1{box-sizing: border-box;padding: 50px;}
-				#content > ul > .course .course2{width: 400px;height: 400px;margin-left: 50px;}
-				#content > ul > .course .course3{width: 480px; position: absolute;right: 50px;top: 70px;}
+				#content > ul > .course .course1{box-sizing: border-box;padding: 50px;position: relative;z-index: 2;}
+				#content > ul > .course .course2{width: 400px;height: 400px;margin-left: 50px;position: relative;z-index: 2;}
+				#content > ul > .course .course3{width: 480px; position: absolute;right: 50px;top: 70px;z-index: 2;}
 				#content > ul > .course .course3 > .line{width: 9px;height: 410px;position: absolute;top: -7px;background: url(img/plus_row.png) no-repeat;}
 				#content > ul > .course .course3 > .line:nth-child(1){left: -5px;}
 				#content > ul > .course .course3 > .line:nth-child(2){left: 115px;}
@@ -107,8 +108,8 @@
 				
 				/* 第三屏开始 */
 				#content > ul > .works{background: url(img/bg3.jpg) no-repeat;}
-				#content > ul > .works .works1{margin: 50px 0 100px 50px;}
-				#content > ul > .works .works2{margin-left: 50px;}
+				#content > ul > .works .works1{margin: 50px 0 100px 50px;position: relative;z-index: 2;}
+				#content > ul > .works .works2{margin-left: 50px;position: relative;z-index: 2;}
 				#content > ul > .works .works2 > .item{width: 220px;height: 133px;float: left;position: relative;margin: 0 1px; overflow: hidden;}
 				#content > ul > .works .works2 > .item:last-of-type{width: 332px;height: 133px;}
 				#content > ul > .works .works2 > .item > .mask{position: absolute;left: 0;right: 0;top: 0;bottom: 0;
@@ -118,7 +119,7 @@
 				#content > ul > .works .works2 > .item > .mask > .icon{width: 32px;height: 34px;margin: 0 auto;margin-top: 10px;background: url(img/zoomico.png) no-repeat;
 																		transition: 1s background-position;}
 				#content > ul > .works .works3{width: 167px;height: 191px;position: absolute;left: 900px;top: 170px;background: url(img/robot.png) no-repeat;
-												animation: works3Move 5s linear infinite;}
+												animation: works3Move 5s linear infinite;z-index: 2;}
 				@keyframes works3Move{
 					0%{
 						transform: translateX(0px) rotateY(0deg);
@@ -150,8 +151,8 @@
 												background: url(img/greenLine.png) no-repeat;}
 				#content > ul > .about .about3 > .item{position: absolute;width: 260px;height: 200px;border: 5px solid rgba(255,255,255,0.5);
 												border-radius: 8px;z-index: 2; overflow: hidden;}
-				#content > ul > .about .about3 > .item:nth-child(1){left:750px; top:50px}
-				#content > ul > .about .about3 > .item:nth-child(2){left:600px; top:290px}
+				#content > ul > .about .about3 > .item:nth-child(1){left:750px; top:50px;transition: 1s transform;}
+				#content > ul > .about .about3 > .item:nth-child(2){left:600px; top:290px;transition: 1s transform;}
 				#content > ul > .about .about3 > .item:nth-child(1) span{position: absolute;left: 0;top: 0;right: 0;bottom: 0;background: url(img/about2.jpg) no-repeat;
 																			transform: scale(1.5);transition: 1s transform;}
 				#content > ul > .about .about3 > .item:nth-child(2) span{position: absolute;left: 0;top: 0;right: 0;bottom: 0;background: url(img/about4.jpg) no-repeat;
@@ -160,13 +161,13 @@
 				#content > ul > .about .about3 > .item:nth-child(1) ul{position: absolute;left: 0;top: 0;right: 0;bottom: 0;}
 				#content > ul > .about .about3 > .item:nth-child(2) ul{position: absolute;left: 0;top: 0;right: 0;bottom: 0;}
 				#content > ul > .about .about3 > .item > ul > li{float: left;position: relative;overflow: hidden;}
-				#content > ul > .about .about3 > .item > ul > li > img{position: absolute;transition: 1s all;}
+				#content > ul > .about .about3 > .item > ul > li > img{position: absolute;transition: 1s top, 1s left;}
 				/* 第四屏结束 */
 				
 				/* 第五屏开始 */
 				#content > ul > .team{background: url(img/bg5.jpg) no-repeat;}
-				#content > ul > .team .team1{width: 400px;margin: 50px; float: left;}
-				#content > ul > .team .team2{width: 400px;margin: 50px; float: right;}
+				#content > ul > .team .team1{width: 400px;margin: 50px; float: left;transition: 1s transform;}
+				#content > ul > .team .team2{width: 400px;margin: 50px; float: right;transition: 1s transform;}
 				#content > ul > .team .team3{width: 944px;height: 448px;position: absolute;left: 50%;margin-left: -472px; margin-top: 250px;}
 				#content > ul > .team .team3 >ul {height: 100%;position: relative;}
 				#content > ul > .team .team3 >ul > li{width: 118px;height: 100%;background: pink;float: left;background: url(img/team.png) no-repeat;}
@@ -185,21 +186,53 @@
 				
 				/* 右侧小圆点开始 */
 				#content > .dot{position: fixed; right: 0;top: 50%;}
-				#content > .dot > li{width: 15px;height: 15px;border: 2px solid pink; border-radius: 50%;margin-bottom: 10px;}
+				#content > .dot > li{width: 20px; height: 20px;border-radius: 50%;background:rgba(255,255,255,0.5);margin-bottom: 3px;
+												box-shadow: 0 0 4px rgba(25,25,25,0.8);cursor: pointer;}
 				#content > .dot > li.active{background: white;}
 				
 				/* 右侧小圆点结束 */
+				
+				/* 出入场开始 */
+				
+				#content .course .plane1{ width:359px; height:283px; background:url(img/plane1.png) no-repeat; position:absolute; left:300px; top:-100px; transition:1s;}
+				#content .course .plane2{ width:309px; height:249px; background:url(img/plane2.png) no-repeat; position:absolute; left:-100px; top:200px; transition:1s;}
+				#content .course .plane3{ width:230px; height:182px; background:url(img/plane3.png) no-repeat; position:absolute; left:300px; top:400px; transition:1s;}
+				#content .works .pencel1{ width:180px; height:97px; background:url(img/pencel1.png) no-repeat; position:absolute; transition:1s; left:500px; top:0;}
+				#content .works .pencel2{ width:268px; height:38px; background:url(img/pencel2.png) no-repeat; position:absolute; transition:1s; left:300px; top:250px;}
+				#content .works .pencel3{ width:441px; height:231px; background:url(img/pencel3.png) no-repeat; position:absolute; transition:1s; left:650px; top:300px;}
+				/* 出入场结束 */
 			/* content结束 */
+			
+			/* 音频开始 */
+			#head > .headMain > .audio{width: 14px;height: 14px;float: left;margin: 50px 0 0 5px; background: url(img/musicoff.gif) no-repeat;}
+			/* 音频结束 */
+			
+			/* 开机动画开始 */
+			#mask{height: 100%;width: 100%;position: absolute;z-index: 101;}
+			#mask > .up{width: 100%;height: 50%;background: deepskyblue;transition: 1s height;}
+			#mask > .down{width: 100%;height: 50%;background: deepskyblue;transition: 1s height;position: absolute;bottom: 0;}
+			#mask > .line{height: 4px;background: white;position: absolute;left: 0; top: 50%;margin-top: -2px; transition: 1s width;}
+			
+			
+			/* 开机动画结束 */
 		</style>
 	</head>
 	<body>
 		<section id="warp">
+			<div id="mask">
+				<div class="up"></div>
+				<div class="down"></div>
+				<span class="line"></span>
+			</div>
 			<header id="head">
 				<div class="headMain">
 					<div class="logo">
 						<a href="javascript:;">
 							<img src="img/logo.png" />
 						</a>
+					</div>
+					<div class="audio">
+						<audio src="img/audio.mp3" loop autoplay></audio>
 					</div>
 					<div class="nav">
 						<ul class="clearfix">
@@ -323,6 +356,9 @@
 								</div>
 								
 							</div>
+							<div class="plane1"></div>
+							<div class="plane2"></div>
+							<div class="plane3"></div>
 						</div>
 					</li>
 					<li class="works">
@@ -363,6 +399,9 @@
 								</div>
 							</div>
 							<div class="works3"></div>
+							<div class="pencel1"></div>
+							<div class="pencel2"></div>
+							<div class="pencel3"></div>
 						</div>
 					</li>
 					<li class="about">
@@ -452,6 +491,155 @@
 				let team3UiNode = document.querySelector('#content > ul > .team .team3 >ul')
 				let team3 = document.querySelector('#content > ul > .team .team3')
 				
+				let audio = document.querySelector('#head > .headMain > .audio')
+				let audio1 = document.querySelector('#head > .headMain > .audio audio')
+				
+				let line =  document.querySelector('#mask > .line')
+				let up =  document.querySelector('#mask > .up')
+				let down =  document.querySelector('#mask > .down')
+				let mask = document.querySelector('#mask')
+				let flag = 0
+				// 开机动画
+				loadingAn()
+				function loadingAn() {
+					var arr = ['bg1.jpg','bg2.jpg','bg3.jpg','bg4.jpg','bg5.jpg','about1.jpg','about2.jpg','about3.jpg','about4.jpg','worksimg1.jpg','worksimg2.jpg','worksimg3.jpg','worksimg4.jpg','team.png','greenLine.png'];
+					for(let i = 0; i < arr.length; i++) {
+						let img = new Image()
+						img.src = 'img/' + arr[i]
+						img.onload = function() {
+							flag++
+							line.style.width = flag/arr.length * 100 + '%' 
+						}
+					}
+					line.addEventListener('transitionend', function() {
+						if(flag === arr.length) {
+							up.style.height = 0
+							down.style.height = 0
+						}
+						this.style.display = 'none'
+					})
+					up.addEventListener('transitionend', function() {
+						mask.remove()
+						home3D()
+						// audio1.play()
+					})
+				}
+				
+				// 音频的暂停播放
+				audio.onclick = function() {
+					if(audio1.paused) {
+						audio1.play()
+						audio.style.background = 'url(img/musicon.gif)'
+					} else {
+						audio1.pause()
+						audio.style.background = 'url(img/musicoff.gif)'
+					}
+				}
+				
+				let anArr = [
+					{
+						inAn: function() {
+							let home1 = document.querySelector("#content > ul > .home .home1")
+							let home2 = document.querySelector("#content > ul > .home .home2")
+							
+							home1.style.transform = 'translateY(0px)'
+							home2.style.transform = 'translateY(0px)'
+							
+							home1.style.opacity = 1
+							home2.style.opacity = 1
+						},
+						outAn: function() {
+							let home1 = document.querySelector("#content > ul > .home .home1")
+							let home2 = document.querySelector("#content > ul > .home .home2")
+							
+							home1.style.transform = 'translateY(-600px)'
+							home2.style.transform = 'translateY(200px)'
+							
+							home1.style.opacity = 0
+							home2.style.opacity = 0
+						}
+					},{
+						inAn: function() {
+							let plane1 =  document.querySelector('#content .course .plane1')
+							let plane2 =  document.querySelector('#content .course .plane2')
+							let plane3 =  document.querySelector('#content .course .plane3')
+							
+							plane1.style.transform = 'translate(0px, 0px)'
+							plane2.style.transform = 'translate(0px, 0px)'
+							plane3.style.transform = 'translate(0px, 0px)'
+						},
+						outAn: function() {
+							let plane1 =  document.querySelector('#content .course .plane1')
+							let plane2 =  document.querySelector('#content .course .plane2')
+							let plane3 =  document.querySelector('#content .course .plane3')
+							
+							plane1.style.transform = 'translate(-200px, -200px)'
+							plane2.style.transform = 'translate(-200px, 200px)'
+							plane3.style.transform = 'translate(200px, -200px)'
+							
+						}
+					},{
+						inAn: function() {
+							let pencel1 = document.querySelector('#content .works .pencel1')
+							let pencel2 = document.querySelector('#content .works .pencel2')
+							let pencel3 = document.querySelector('#content .works .pencel3')
+							
+							pencel1.style.transform = 'translateY(0px)'
+							pencel2.style.transform = 'translateY(0px)'
+							pencel3.style.transform = 'translateY(0px)'
+						},
+						outAn: function() {
+							let pencel1 = document.querySelector('#content .works .pencel1')
+							let pencel2 = document.querySelector('#content .works .pencel2')
+							let pencel3 = document.querySelector('#content .works .pencel3')
+							
+							pencel1.style.transform = 'translateY(-100px)'
+							pencel2.style.transform = 'translateY(100px)'
+							pencel3.style.transform = 'translateY(100px)'
+							
+						}
+					},{
+						inAn: function() {
+							let item1 =  document.querySelector('#content > ul > .about .about3 > .item:nth-child(1)')
+							let item2 =  document.querySelector('#content > ul > .about .about3 > .item:nth-child(2)')
+							
+							item1.style.transform = 'rotate(0deg)'
+							item2.style.transform = 'rotate(0deg)'
+						},
+						outAn: function() {
+							let item1 =  document.querySelector('#content > ul > .about .about3 > .item:nth-child(1)')
+							let item2 =  document.querySelector('#content > ul > .about .about3 > .item:nth-child(2)')
+							
+							item1.style.transform = 'rotate(45deg)'
+							item2.style.transform = 'rotate(-30deg)'
+						}
+					},{
+						inAn: function() {
+							let team1 = document.querySelector('#content > ul > .team .team1')
+							let team2 = document.querySelector('#content > ul > .team .team2')
+							
+							team1.style.transform = 'translateX(0px)'
+							team2.style.transform = 'translateX(0px)'
+						},
+						outAn: function() {
+							let team1 = document.querySelector('#content > ul > .team .team1')
+							let team2 = document.querySelector('#content > ul > .team .team2')
+							
+							team1.style.transform = 'translateX(-200px)'
+							team2.style.transform = 'translateX(200px)'
+						}
+					}
+				]
+				
+				// 每屏准备入场状态
+				for(let i = 0; i < anArr.length; i++) {
+					anArr[i]['outAn']()
+				}
+				
+// 				anArr[4]['outAn']()
+				setTimeout(() => {
+					anArr[0]['inAn']()
+				},2000)
 				
 				// 气泡效果
 				biubiu()
@@ -616,7 +804,7 @@
 				var oldIndex = 0
 				var timer3D = 0
 				var autoIndex = 0
-				home3D();
+				// home3D();
 				function home3D() {
 					// 小圆点点击切换
 					for(var i = 0; i < home2LiNodes.length; i++) {
@@ -697,6 +885,7 @@
 				}
 				
 				let now = 0
+				let pre = 0
 				let timer
 				window.onresize = function() {
 					contentBind()
@@ -729,6 +918,8 @@
 					} else if(ev.detail) {
 						dir = ev.detail<0?'up':'down'
 					}
+					
+					pre = now
 					
 					switch (dir){
 						case 'up':
@@ -769,6 +960,7 @@
 						// 但是liNodes[i].index = i这里用了let,直接避免了这种情况
 						liNodes[i].index = i
 						liNodes[i].onclick = function() {
+							pre = now
 							move(this.index)
 							now = this.index
 						}
@@ -781,12 +973,13 @@
 						// 但是liNodes[i].index = i这里用了let,直接避免了这种情况
 						dotLiNodes[i].index = i
 						dotLiNodes[i].onclick = function() {
+							pre = now
 							move(this.index)
 							now = this.index
 						}
 					}
 				}
-				move(4)
+				// move(4)
 				function move(i) {
 					// 遍历修改up的宽度,为''清除干净
 					for(let i = 0; i < upNodes.length; i++) {
@@ -803,6 +996,14 @@
 						dotLiNodes[i].className = ''
 					}
 					dotLiNodes[i].className = 'active'
+					
+					if(anArr[i] && typeof anArr[i]['inAn'] === 'function') {
+						anArr[i]['inAn']()
+					}
+					
+					if(anArr[pre] && typeof anArr[pre]['outAn'] === 'function') {
+						anArr[pre]['outAn']()
+					}
 				}
 				
 			}
